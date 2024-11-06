@@ -31,47 +31,6 @@ const App: React.FC = () => {
     }
   };
 
-  const handleGenerate = async () => {
-    setGeneratedText("");
-    setIsLoading(true);
-
-    try {
-      const response = await fetch(
-        "http://localhost:3001/generate-text-stream",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ query, style }),
-        }
-      );
-
-      // Server-Sent Events (SSE) lesen
-      const reader = response.body?.getReader();
-      const decoder = new TextDecoder("utf-8");
-
-      while (true) {
-        const { value, done } = await reader?.read()!;
-        if (done) break;
-
-        const chunk = decoder.decode(value);
-        chunk.split("\n").forEach((line) => {
-          if (line.startsWith("data: ")) {
-            const text = line.replace("data: ", "").trim();
-            if (text === "[DONE]") return;
-
-            setGeneratedText((prev) => prev + " " + text); // Text stückweise hinzufügen
-          }
-        });
-      }
-    } catch (error) {
-      console.error("Error generating text:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setQuery(e.target.value);
 
@@ -87,15 +46,6 @@ const App: React.FC = () => {
       .writeText(generatedText)
       .then(() => console.log("Text copied to clipboard!"))
       .catch((error) => console.error("Failed to copy text:", error));
-  };
-
-  const streamText = (text: string) => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setGeneratedText((prev) => prev + text.charAt(index));
-      index++;
-      if (index === text.length) clearInterval(interval);
-    }, 50); // Adjust the delay for a slower or faster streaming effect
   };
 
   return (
