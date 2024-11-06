@@ -1,0 +1,145 @@
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1f2937; /* Dark background */
+  color: #fff;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.search{
+  padding: 30px;
+}
+
+.radio-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.radio-button {
+  margin: 0 100px; /* Space between radio buttons */
+  align-self: center;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 1.875rem; /* 3xl */
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.text-area {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #4b5563; /* Gray border */
+  padding: 1rem 1.5rem;
+  border-radius: 12px; /* Adjustable border radius */
+  background-color: #1f2937; /* Dark background */
+  color: #d1d5db; /* Light text color */
+  transition: box-shadow 0.2s, border-color 0.2s;
+  resize: none; /* Prevents manual resizing */
+  overflow: hidden; /* Hides scrollbar */
+  line-height: 1.75; /* Improves readability */
+
+}
+
+.text-area:focus {
+  border-color: #9ca3af; /* Light gray on focus */
+}
+
+.text-area:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+button {
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background-color: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.output-container {
+  align-self: center;
+  max-width: 60%; /* Limits the output width */
+  width: 100%;
+  background-color: #1f2937;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.output-paragraph {
+  margin-bottom: 1rem; /* Adds space between paragraphs */
+  word-wrap: break-word; /* Wraps long words to avoid overflow */
+  line-height: 1.75; /* Improves readability */
+}
+
+/* Ladeanimation - animierte Punkte */
+.loading-dots {
+  font-size: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.loading-dots span {
+  display: inline-block;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Bouncing Punkte Animation */
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
