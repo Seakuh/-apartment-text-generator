@@ -7,7 +7,7 @@ const App: React.FC = () => {
   const [generatedText, setGeneratedText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const apiUrl = process.env.REACT_APP_API_URL;
+  const apiUrl = "https://apartment-text-generator.onrender.com";
 
   const handleGenerateText = async () => {
     setGeneratedText("");
