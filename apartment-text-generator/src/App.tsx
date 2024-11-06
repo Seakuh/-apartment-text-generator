@@ -7,13 +7,14 @@ const App: React.FC = () => {
   const [generatedText, setGeneratedText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleGenerateText = async () => {
     setGeneratedText("");
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3001/generate-text", {
+      const response = await fetch(`${apiUrl}/generate-text`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
