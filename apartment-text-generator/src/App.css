@@ -22,7 +22,7 @@ body {
 }
 
 .radio-button {
-  margin: 0 100px; /* Space between radio buttons */
+  margin: 0 80px; /* Space between radio buttons */
   align-self: center;
 }
 
@@ -54,7 +54,6 @@ h1 {
   resize: none; /* Prevents manual resizing */
   overflow: hidden; /* Hides scrollbar */
   line-height: 1.75; /* Improves readability */
-
 }
 
 .text-area:focus {
@@ -64,8 +63,6 @@ h1 {
 .text-area:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
-
-
 
 button {
   width: 50%;
