@@ -81,6 +81,13 @@ const App: React.FC = () => {
     }
   };
 
+  const handleCopy = () => {
+    navigator.clipboard
+      .writeText(generatedText)
+      .then(() => console.log("Text copied to clipboard!"))
+      .catch((error) => console.error("Failed to copy text:", error));
+  };
+
   const streamText = (text: string) => {
     let index = 0;
     const interval = setInterval(() => {
@@ -139,11 +146,22 @@ const App: React.FC = () => {
             <span>•</span>
           </div>
         ) : (
-          generatedText.split("\n").map((paragraph, index) => (
-            <p key={index} className="output-paragraph">
-              {paragraph}
-            </p>
-          ))
+          <>
+            {generatedText.split("\n").map((paragraph, index) => (
+              <p key={index} className="output-paragraph">
+                {paragraph}
+              </p>
+            ))}
+            {generatedText && (
+              <button
+                className="copy-button"
+                onClick={handleCopy}
+                title="Copy text"
+              >
+                📋 Copy
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>

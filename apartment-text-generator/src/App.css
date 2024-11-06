@@ -143,3 +143,24 @@ button:disabled {
     transform: translateY(-10px);
   }
 }
+
+.output-container {
+  position: relative;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 100px;
+}
+
+.copy-button {
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background-color: #3b82f6;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+  color: #3DAFAC;
+}
