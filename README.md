@@ -2,6 +2,10 @@
 
 ![](apartment-text-generator/public/home_ginue_logo.png)
 
+## Website
+
+https://apartment-text-generator-site.onrender.com/
+
 Welcome to the **Apartment Text Generator**! This application helps users create unique, well-crafted apartment search texts to stand out to potential landlords. Leveraging the power of AI, it generates personalized, engaging messages based on user-provided information. The app is designed with different tones in mind, allowing users to choose between a "friendly" or "serious" style, making it easy to tailor messages to suit different landlord preferences.
 
 ## Features
